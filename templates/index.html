@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Tool</title>
+</head>
+<body>
+    <h1>Sentiment Analysis Tool</h1>
+    <form method="post">
+        <label for="message">Enter your message:</label>
+        <input type="text" id="message" name="message" required>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if message %}
+        <p><strong>Input Message:</strong> {{ message }}</p>
+        <p><strong>NLTK Sentiment:</strong> {{ nltk_sentiment }}</p>
+        <p><strong>Transformers Sentiment:</strong> {{ transformers_sentiment }}</p>
+    {% endif %}
+</body>
+</html>
